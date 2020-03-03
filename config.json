@@ -10,7 +10,7 @@
       "po_ids": "select id as po_ids from purchase_orders where order_id in <order_ids>",
       "p_ids": "select li.plan_id as p_ids from orders o join line_items li on li.order_id = o.id where o.id in <order_ids>",
       "li_ids": "select id as li_ids from line_items where plan_id in <p_ids> or order_id in <order_ids>",
-      "plan_ids": "select plan_id as plan_ids from app_live_testing_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from live_testing_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from app_automate_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from automate_group_plans where group_id in <group_ids>"
+      "plan_ids": "select plan_id as plan_ids from app_live_testing_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from live_testing_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from app_automate_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from automate_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from screenshot_group_plans where group_id in <group_ids>"
     }
   },
   "database": {
