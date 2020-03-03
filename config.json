@@ -1,7 +1,7 @@
 {
   "variables": {
     "railsapp": {
-      "group_ids": "(517702)",
+      "group_ids": "(2850115)",
       "user_ids": "Select id as user_ids from users where group_id in <group_ids>",
       "sg_ids": "Select id as sg_ids from sub_groups where group_id in <group_ids>",
       "order_ids": "select id as order_ids from orders where group_id in <group_ids>",
