@@ -17,11 +17,7 @@ const databaseRef = {
   railsapp: {
     config: databaseConfig.railsapp,
     tableConfig: tableConfig.database.railsapp,
-  },
-  zombie: {
-    config: databaseConfig.zombie,
-    tableConfig: tableConfig.database.zombie,
-  },
+  }
 };
 
 // eslint-disable-next-line arrow-body-style
@@ -38,12 +34,7 @@ const railsappVariables = processVariables(
   getQueryFunction('railsapp'),
 );
 
-const zombieVariables = processVariables(
-  tableConfig.variables.zombie,
-  getQueryFunction('zombie'),
-);
-
-Promise.all([zombieVariables, railsappVariables])
+Promise.all([railsappVariables])
   // eslint-disable-next-line no-console
   .catch((err) => { console.error(err); })
   .then((varArray) => {
