@@ -1,7 +1,7 @@
 {
   "variables": {
     "railsapp": {
-      "group_ids": "(2850115)",
+      "group_ids": "(2850115, 2850290)",
       "user_ids": "Select id as user_ids from users where group_id in <group_ids>",
       "sg_ids": "Select id as sg_ids from sub_groups where group_id in <group_ids>",
       "order_ids": "select id as order_ids from orders where group_id in <group_ids>",
@@ -10,31 +10,13 @@
       "po_ids": "select id as po_ids from purchase_orders where order_id in <order_ids>",
       "p_ids": "select li.plan_id as p_ids from orders o join line_items li on li.order_id = o.id where o.id in <order_ids>",
       "li_ids": "select id as li_ids from line_items where plan_id in <p_ids> or order_id in <order_ids>",
+			"opp_ids": "('006N000000GS1HyIAL')",
       "plan_ids": "select plan_id as plan_ids from app_live_testing_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from live_testing_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from app_automate_group_plans where group_id in <group_ids> UNION DISTINCT select plan_id as plan_ids from automate_group_plans where group_id in <group_ids>"
     }
   },
   "database": {
     "railsapp": {
-      "app_automate_group_plans": { "condition": "group_id in <group_ids> or group_id in <sg_ids>" },
-      "app_live_testing_group_plans": { "condition": "group_id in <group_ids> or group_id in <sg_ids>" },
-      "app_summary_logs": { "condition": "user_id in <user_ids>" },
-      "automate_group_plans": { "condition": "group_id in <group_ids> or group_id in <sg_ids>" },
-      "billing_communications": { "condition": "group_id in <group_ids>" },
-      "groups": { "condition": "id in <group_ids>" },
-      "line_items": { "condition": "id in <li_ids>" },
-      "live_testing_group_plans": { "condition": "group_id in <group_ids> or group_id in <sg_ids>" },
-      "merchant_communications": { "condition": "id in <mc_ids>" },
-      "orders": { "condition": "id in <order_ids>" },
-      "plans": { "condition": "id in <p_ids> or id in <plan_ids>" },
-      "product_usage_logs": { "condition": "id in <pul_ids>" },
-      "purchase_orders": { "condition": "id in <po_ids>" },
-      "screenshot_group_plans": { "condition": "group_id in <group_ids> or group_id in <sg_ids>" },
-      "users": { "condition": "id in <user_ids>" },
-      "user_details": { "condition": "user_id in <user_ids>" },
-      "user_mails": { "condition": "user_id in <user_ids>" },
-      "user_pii_preferences": { "condition": "user_id in <user_ids>" },
-      "sub_groups": { "condition": "group_id in <group_ids>" },
-      "group_invites": { "condition": "group_id in <group_ids>" }
+      "subscription_session_infos": { "condition": "group_id in <group_ids>" }
     }
   }
 }
