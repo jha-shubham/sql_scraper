@@ -1,7 +1,7 @@
 {
   "variables": {
     "railsapp": {
-      "group_ids": "(517702)",
+      "group_ids": "(2850115, 2850309, 2850310, 2850311, 2850312)",
       "user_ids": "Select id as user_ids from users where group_id in <group_ids>",
       "sg_ids": "Select id as sg_ids from sub_groups where group_id in <group_ids>",
       "order_ids": "select id as order_ids from orders where group_id in <group_ids>",
@@ -34,7 +34,8 @@
       "user_mails": { "condition": "user_id in <user_ids>" },
       "user_pii_preferences": { "condition": "user_id in <user_ids>" },
       "sub_groups": { "condition": "group_id in <group_ids>" },
-      "group_invites": { "condition": "group_id in <group_ids>" }
+      "group_invites": { "condition": "group_id in <group_ids>" },
+      "free_trial_logs": { "condition": "group_id in <group_ids>" }
     }
   }
 }
